@@ -11,6 +11,11 @@ int main()
 
 //////////////////////////////receiving data///////////////////////////////////////
     f_input = fopen("text.txt", "r");
+    if (f_input==NULL)
+    {
+        printf("\n ERROR. CANNOT OPEN THE FILE.");
+        exit(1);
+    }
     fscanf(f_input, "%lf %lf %d %lf %s ", &x1, &x2, &N, &delta, &group_name);
     fgets(&student_name, 20, f_input);
     fclose(f_input);
