@@ -13,7 +13,7 @@ int main()
     f_input = fopen("text.txt", "r");
     if (f_input==NULL)
     {
-        printf("\n ERROR. CANNOT OPEN THE FILE.");
+        printf("\n ERROR. CANNOT OPEN <text.txt>.");
         exit(1);
     }
     fscanf(f_input, "%lf %lf %d %lf %s ", &x1, &x2, &N, &delta, &group_name);
@@ -35,9 +35,14 @@ int main()
 //////////////////////////////text+bin file////////////////////////////////////////
     f_output = fopen( "text_out.txt", "w" );
     f_outbin = fopen( "beans.bin", "wb" );
-    if (f_output==NULL||f_outbin==NULL)
+    if (f_output==NULL)
     {
-        printf("\n ERROR. CANNOT OPEN THE FILE.");
+        printf("\n ERROR. CANNOT OPEN <text_out.txt>.");
+        exit(1);
+    }
+    if (f_outbin==NULL)
+    {
+        printf("\n ERROR. CANNOT OPEN <beans.bin>.");
         exit(1);
     }
     fprintf(f_output, "\n*----+---------------------+---------------------*");
@@ -62,7 +67,7 @@ int main()
     f_inbin = fopen( "beans.bin", "rb" );
     if (f_inbin==NULL)
     {
-        printf("\n ERROR. CANNOT OPEN THE FILE.");
+        printf("\n ERROR. CANNOT OPEN <beans.bin>.");
         exit(1);
     }
     printf("\n*----+---------------------+---------------------*");
